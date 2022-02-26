@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">exercise_android</string>
+    <string name="jong_nham">ចង់ញុាំ</string>
+    <string name="choose_language">Choose Language</string>
+    <string name="home">Home</string>
+    <string name="coupon">Coupon</string>
+    <string name="favorite">Favorite</string>
+    <string name="me">Me</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recommended">Recommended</string>
+    <string name="near_me">Near Me</string>
+    <string name="most_used_coupon">Most Used\nCoupon</string>
+    <string name="type_of_food">Type of Food</string>
+    <string name="location">Location</string>
+    <string name="search_restaurants">Search Restaurants</string>
+    <string name="most_view">Most View</string>
+    <string name="top_review">Top Review</string>
+</resources>
