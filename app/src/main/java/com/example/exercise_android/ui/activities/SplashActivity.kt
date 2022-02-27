@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.exercise_android.R
 
 class SplashActivity : AppCompatActivity() {
@@ -13,11 +14,12 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
             finish()
         }, 2000)
-
     }
 }
