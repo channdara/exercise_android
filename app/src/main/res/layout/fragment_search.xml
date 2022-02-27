@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    tools:context=".ui.fragments.SearchFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/search_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@android:color/holo_red_dark"
+        app:cardCornerRadius="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/search_button_back"
+                android:layout_width="?android:attr/actionBarSize"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:src="@drawable/ic_chevron_left" />
+
+            <EditText
+                android:id="@+id/search_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/search_edit_text_background"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="8dp"
+                android:hint="@string/search"
+                android:imeOptions="actionSearch"
+                android:paddingHorizontal="8dp"
+                android:singleLine="true" />
+
+            <ImageButton
+                android:id="@+id/search_button_map"
+                android:layout_width="?android:attr/actionBarSize"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:src="@drawable/ic_public" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/search_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <TableRow
+        android:id="@+id/search_layout_filter"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/search_action_bar"
+        android:background="#424242"
+        android:padding="6dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_filter_background"
+            android:gravity="center"
+            android:text="@string/filter"
+            android:textColor="@android:color/white"
+            app:drawableStartCompat="@drawable/ic_filter_list" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_filter_background"
+            android:gravity="center"
+            android:text="@string/ranking"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_filter_background"
+            android:gravity="center"
+            android:text="@string/view"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/search_filter_background"
+            android:gravity="center"
+            android:text="@string/price"
+            android:textColor="@android:color/white" />
+
+    </TableRow>
+
+    <TextView
+        android:id="@+id/search_total_restaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_layout_filter"
+        android:padding="8dp"
+        android:visibility="gone"
+        tools:text="n restaurants found" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_total_restaurant"
+        android:visibility="gone" />
+
+</RelativeLayout>

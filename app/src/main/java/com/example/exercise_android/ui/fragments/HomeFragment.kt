@@ -4,32 +4,31 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exercise_android.R
 import com.example.exercise_android.adapter.CouponRecyclerAdapter
+import com.example.exercise_android.ui.activities.MainActivity
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class HomeFragment : Fragment() {
-    private lateinit var homeView: View
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        homeView = inflater.inflate(R.layout.fragment_home, container, false)
+    ): View = inflater.inflate(R.layout.fragment_home, container, false)
 
-        initCouponRecyclerView()
-        initListener()
-
-        return homeView
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupCouponRecyclerView()
+        setupListener()
     }
 
-    private fun initCouponRecyclerView() {
-        homeView.home_recycler_view.apply {
+    private fun setupCouponRecyclerView() {
+        view?.home_recycler_view?.apply {
             layoutManager = LinearLayoutManager(
-                homeView.context,
+                context,
                 LinearLayoutManager.HORIZONTAL,
                 false
             )
@@ -37,9 +36,12 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun initListener() {
-        homeView.home_search_button.setOnClickListener {
-            Toast.makeText(context, "OK", Toast.LENGTH_SHORT).show()
+    private fun setupListener() {
+        view?.apply {
+            home_search_button?.setOnClickListener {
+                val mainActivity = (activity as MainActivity)
+                mainActivity.addFragment(mainActivity.searchFragment)
+            }
         }
     }
 }

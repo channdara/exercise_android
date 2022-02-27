@@ -8,12 +8,13 @@ import androidx.fragment.app.Fragment
 import com.example.exercise_android.R
 import kotlinx.android.synthetic.main.fragment_empty.view.*
 
-private const val APP_BAR_TITLE = "appbar_title"
-
 class EmptyFragment : Fragment() {
+
     private var title: String? = null
 
     companion object {
+        const val APP_BAR_TITLE = "appbar_title"
+
         fun newInstance(fragment: Fragment, title: String) {
             fragment.arguments = Bundle().apply {
                 putString(APP_BAR_TITLE, title)
@@ -25,7 +26,6 @@ class EmptyFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
             title = it.getString(APP_BAR_TITLE)
-            val item = "item"
         }
     }
 
@@ -33,15 +33,10 @@ class EmptyFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        arguments?.let {
-            title = it.getString(APP_BAR_TITLE)
-            val item = "item"
-        }
-        val view = inflater.inflate(R.layout.fragment_empty, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_empty, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         view.empty_text_view.text = title
-        return view
     }
-
-
 }

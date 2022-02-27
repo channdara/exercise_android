@@ -6,8 +6,6 @@
     <string name="coupon">Coupon</string>
     <string name="favorite">Favorite</string>
     <string name="me">Me</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="recommended">Recommended</string>
     <string name="near_me">Near Me</string>
     <string name="most_used_coupon">Most Used\nCoupon</string>
@@ -16,4 +14,11 @@
     <string name="search_restaurants">Search Restaurants</string>
     <string name="most_view">Most View</string>
     <string name="top_review">Top Review</string>
+    <string name="search">Search</string>
+    <string name="filter">Filter</string>
+    <string name="ranking">Ranking</string>
+    <string name="view">View</string>
+    <string name="price">Price</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

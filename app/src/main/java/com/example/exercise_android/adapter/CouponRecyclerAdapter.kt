@@ -19,6 +19,4 @@ class CouponRecyclerAdapter : RecyclerView.Adapter<CouponViewHolder>() {
     override fun getItemCount(): Int = 3
 }
 
-class CouponViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-}
+class CouponViewHolder(view: View) : RecyclerView.ViewHolder(view)

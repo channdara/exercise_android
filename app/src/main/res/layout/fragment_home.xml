@@ -22,12 +22,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:gravity="center">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:clipChildren="true"
                 app:cardCornerRadius="8dp">
 
@@ -44,7 +43,7 @@
                 android:layout_marginStart="4dp"
                 android:text="@string/jong_nham"
                 android:textColor="@color/white"
-                android:textSize="8pt" />
+                android:textSize="10pt" />
 
         </LinearLayout>
 
@@ -53,7 +52,10 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_alignParentBottom="true"
-            android:layout_margin="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
             app:cardCornerRadius="6dp">
 
             <TextView
@@ -64,7 +66,6 @@
                 android:drawablePadding="4dp"
                 android:text="@string/search_restaurants"
                 app:drawableStartCompat="@drawable/ic_search" />
-
 
         </androidx.cardview.widget.CardView>
 
